@@ -1,0 +1,118 @@
+<app-header></app-header>
+<main>
+  <div class="card-with-menu">
+    <aside class="card-sidebar">
+      <a><span>Cliente</span><i class="pi pi-user"></i></a>
+      <a><span>Demanda</span><i class="pi pi-pencil"></i></a>
+      <a><span>Pagamento</span><i class="pi pi-credit-card"></i></a>
+    </aside>
+    <div class="card-content card-content-type-form">
+      <h3>Criar nova demanda</h3>
+      <form>
+        <section class="client-infos">
+          <div class="personal-infos">
+            <div class="input-text">
+              <label for="name">Nome</label>
+              <input type="text" name="name" data-category="name" />
+            </div>
+            <div class="input-text">
+              <label for="address">Endereço</label>
+              <input type="text" name="address" data-category="address"/>
+            </div>
+            <div class="input-text">
+              <label for="number">Numero</label>
+              <input  type="text" name="number" data-category="number"/>
+            </div>
+            <div class="input-text">
+              <label for="complement">Complemento</label>
+              <input type="text" name="complement" data-category="complement" />
+            </div>
+            <div class="input-text">
+              <label for="zipcode">Cep</label>
+              <input type="text" data-category="zipcode" name="zipcode" />
+            </div>
+            <div class="input-text">
+              <label for="document">Documento</label>
+              <input type="text" data-category="document" name="document" />
+            </div>
+            <div class="input-text">
+              <label for="email">Email</label>
+              <input type="email"  data-category="email" name="email" />
+            </div>
+            <div class="input-text">
+              <label for="phone">Celular</label>
+              <input type="text" data-category="phone" name="phone"/>
+            </div>
+          </div>
+
+          <p-divider layout="vertical" class="divider"></p-divider>
+
+          <div class="company-infos">
+            <div class="input-checkout">
+              <input name="is-company" id="is-company" type="checkbox" />
+              <label for="is-company">Empresa?</label>
+            </div>
+            <div class="input-text">
+              <label for="company-name">Nome da Empresa</label>
+              <input name="company-name" data-category="company-name" type="text" />
+            </div>
+            <div class="input-text">
+              <label for="company-document">CNPJ</label>
+              <input name="company-document" data-category="company-document" type="text" />
+            </div>
+          </div>
+        </section>
+
+        <section class="upload-images" style="display: none;">
+          <div>
+            <label for="images"></label>
+            <input type="file" />
+          </div>
+          <div class="demand-description" style="display: none;">
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+          </div>
+          <div style="display: none;">
+            <select name="products" id="products">
+              <option>Produto</option>
+            </select>
+            <aside class="products-selected">
+              <div class="card-product">
+                <picture class="product-image"></picture>
+                <div class="product-infos">
+                  <h5 class="product-type"></h5>
+                  <h6 class="product-name"></h6>
+                </div>
+              </div>
+            </aside>
+          </div>
+          <div style="display: none;">
+            <label for="demand-value">Valor</label>
+            <input id="demand-value" type="text" />
+          </div>
+          <div class="deadline" style="display: none;">
+            <label for="deadline-date">Entrega</label>
+            <input id="deadline-date" type="date" />
+            <div class="priority-level">
+              <i></i>
+            </div>
+          </div>
+      </section>
+        <div class="payment" style="display: none;">
+          <h4>Formas de pagameto</h4>
+          <div class="payment-infos">
+            <i class="payment-check"></i>
+            <h5 class="payment-detail"></h5>
+          </div>
+        </div>
+        <div class="demand-manager" style="display: none;">
+          <select name="manager-name" id="manager-name"></select>
+          <picture class="manager-image"></picture>
+        </div>
+
+        <div>
+          <a class="submit-create-form">Criar demanda</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

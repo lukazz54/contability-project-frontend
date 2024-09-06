@@ -1,0 +1,74 @@
+<main>
+  <p-toast></p-toast>
+  <div class="login-form-div">
+    <div class="login-header">
+      <h2>Logo</h2>
+    </div>
+    <div class="login-slider">
+      <a #login (click)="toogleLogin('login')" class="option-selected">Login</a>
+      <a #register (click)="toogleLogin('register')">Cadastre-se</a>
+    </div>
+    <div class="login-register-forms" [@moveForms]="state">
+      <form [formGroup]="loginForm"
+            class="login-form"
+            (ngSubmit)="handleLoginSubmit()">
+
+        <div class="login-inputs">
+          <div class="login-input-wrapper">
+            <input type="text"
+              class="login-input"
+              placeholder="USUARIO"
+              formControlName="username" />
+            <i class="pi pi-user"></i>
+          </div>
+          <div class="login-input-wrapper">
+            <input type="password"
+              class="login-input"
+              placeholder="SENHA"
+              formControlName="password" />
+            <i class="pi pi-key"></i>
+          </div>
+        </div>
+
+        <div class="login-forget-pass">
+          <h5>Esqueci minha senha</h5>
+        </div>
+
+        <div class="login-button">
+          <button type="submit">Entrar</button>
+        </div>
+      </form>
+
+      <form [formGroup]="registerForm"
+            class="login-form"
+            (ngSubmit)="handleRegisterSubmit()">
+        <div class="login-inputs register-inputs">
+          <div class="login-input-wrapper">
+            <input type="text"
+                  class="login-input"
+                  placeholder="USUARIO"
+                  formControlName="username" />
+            <i class="pi pi-user"></i>
+          </div>
+          <div class="login-input-wrapper">
+            <input type="text"
+                  class="login-input"
+                  placeholder="EMAIL"
+                  formControlName="email" />
+            <i class="pi pi-envelope"></i>
+          </div>
+          <div class="login-input-wrapper">
+            <input type="password"
+                  class="login-input"
+                  placeholder="SENHA"
+                  formControlName="password" />
+            <i class="pi pi-key"></i>
+          </div>
+        </div>
+        <div class="login-button">
+          <button type="submit">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

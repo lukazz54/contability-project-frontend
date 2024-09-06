@@ -1,0 +1,105 @@
+main {
+  display: flex;
+  justify-content: center;
+  background-color: #dbdbdb;
+  height: 100vh;
+
+  h3 {
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins';
+  }
+
+  form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .client-infos {
+      display: grid;
+      grid-template-columns: 49% 2% 49%;
+      grid-template-rows: 100%;
+      height: 100%;
+
+      .personal-infos {
+        display: flex;
+        flex-wrap: wrap;
+        grid-column: 1;
+
+        input[data-category="name"] {
+          width: 390px;
+        }
+        input[data-category="address"] {
+          width: 390px;
+        }
+        input[data-category="number"] {
+          width: 90px;
+        }
+        input[data-category="complement"] {
+          width: 135px;
+        }
+        input[data-category="email"] {
+          width: 320px;
+        }
+      }
+
+      .divider {
+        grid-column: 2;
+      }
+
+      .company-infos {
+        grid-column: 3;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+
+        input[data-category="company-name"] {
+          width: 435px;
+        }
+
+        input[data-category="company-document"] {
+          width: 205px;
+        }
+      }
+
+      .input-checkout {
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-end;
+        height: 45px;
+        margin: 10px;
+      }
+
+      .input-text {
+        position: relative;
+        margin: 10px;
+
+        input {
+          display: flex;
+          height: 45px;
+          border: 1px solid #00000036;
+          border-radius: 6px;
+          padding: 0 0 0 10px;
+          font-family: 'Poppins';
+          letter-spacing: 1px;
+        }
+
+        & input:focus {
+          outline: none;
+        }
+
+        label {
+          position: absolute;
+          top: -11px;
+          left: 10px;
+          background-color: #FFFFFF;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}

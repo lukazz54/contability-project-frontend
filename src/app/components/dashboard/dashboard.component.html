@@ -1,0 +1,54 @@
+<app-header></app-header>
+<main>
+  <!-- Demandas em Atraso -->
+  <section class="demand-late" #sectionLate>
+    <div class="card">
+      <h3 class="standard-title">Demandas em atraso</h3>
+      <div class="demand-late-container">
+          @for (job of jobs; track job.job_id) {
+            <article class="delimiter-container">
+              <div class="status">
+                <i [class]="verifyIcon(job)"></i>
+                <h3>{{job.client_infos.nome | delimiter: 9}}</h3><!-- nome cliente -->
+                <h4>{{job.delivery | date: "dd/MM/yyyy" }}</h4><!-- data -->
+                <h5>status</h5><!-- status -->
+                <div class="warn-status">
+                  <h4>{{job.status}}</h4><!-- status box -->
+                </div>
+              </div>
+            </article>
+          }
+      </div>
+      <div class="see-more">
+        <a (click)="showLateDemandTable()">ver mais</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cronograma de demanda -->
+  <section class="demand-schedule" #sectionSchedule>
+    <div class="card">
+      <h3 class="standard-title">Cronograma de Demandas</h3>
+      <div class="demand-current-container">
+          @for (job of currentjobs; track job.job_id) {
+            <article class="delimiter-container">
+              <div class="status">
+                <i [class]="verifyIcon(job)"></i>
+                <h3>{{job.client_infos.nome | delimiter: 9}}</h3><!-- nome cliente -->
+                <h4>{{job.delivery | date: "dd/MM/yyyy" }}</h4><!-- data -->
+                <h5>status</h5><!-- status -->
+                <div class="warn-status">
+                  <h4>{{job.status}}</h4><!-- status box -->
+                </div>
+              </div>
+            </article>
+          }
+      </div>
+      <div class="see-more">
+        <a (click)="showLateDemandTable()">ver mais</a>
+      </div>
+    </div>
+  </section>
+
+
+</main>

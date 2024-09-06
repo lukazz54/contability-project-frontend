@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70px;
+  background: linear-gradient(to right, #9320C9, #43006C);
+  color: #FFFFFF;
+
+  .header-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 20px;
+  }
+
+  .header-list-item {
+    list-style: none;
+    margin-right: 20px;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+
+  .header-button-new {
+    text-decoration: none;
+    background-color: #ffba53;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin: 0px 20px;
+  }
+
+  .header-signup {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 200;
+    letter-spacing: 1px;
+    transition: .5s;
+
+    &:hover {
+      color: lighten($color: #fffb00, $amount: 20);
+    }
+  }
+}

@@ -1,0 +1,203 @@
+$color-demand-danger: #ff4949;
+$color-demand-done: #1ac45b;
+$color-demand-progress: #2a6ed4;
+
+@mixin status-theme($theme: $color-demand-danger) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid $theme;
+  border-radius: 7px;
+  width: fit-content;
+  padding: 0px 15px 10px 15px;
+}
+
+@mixin icon-theme($theme: $color-demand-danger) {
+  font-size: 2.5rem;
+  margin: -20px 10px 10px 10px;
+  background-color: white;
+  color: $theme;
+}
+
+@mixin status-div-theme($theme: $color-demand-danger){
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 400;
+  background-color: $theme;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+main {
+  display: flex;
+  background-color: #dbdbdb;
+  height: 100vh;
+
+  .demand-late {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .standard-title {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(0,0,0, 0.3);
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 20px;
+  }
+
+  .demand-late-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .delimiter-container {
+      padding: 20px 10px 10px 10px;
+    }
+
+    .status {
+      @include status-theme($color-demand-danger);
+
+      & i {
+        @include icon-theme($color-demand-danger)
+      }
+
+      & h3 {
+        margin: 0;
+      }
+
+      & h4 {
+        margin: 20px 0px;
+        font-size: .9rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      & h5 {
+        margin: 0;
+      }
+
+      .warn-status {
+        @include status-div-theme();
+
+        & h4 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .see-more {
+    display: flex;
+    justify-content: center;
+
+    & a {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 0 0;
+      color: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      font-size: .9rem;
+    }
+
+    & a::after, & a::before {
+      content: '';
+      position: relative;
+      height: 2px;
+      background: rgba(0, 0, 0, 0.23);;
+      min-width: 100px;
+      margin: 0 10px;
+    }
+  }
+
+  .demand-current-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .delimiter-container {
+      padding: 20px 10px 10px 10px;
+    }
+
+    .status {
+      @include status-theme($color-demand-progress);
+
+      & i {
+        @include icon-theme($color-demand-progress)
+      }
+
+      & h3 {
+        margin: 0;
+      }
+
+      & h4 {
+        margin: 20px 0px;
+        font-size: .9rem;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      & h5 {
+        margin: 0;
+      }
+
+      .warn-status {
+        @include status-div-theme($color-demand-progress);
+
+        & h4 {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .see-more {
+    display: flex;
+    justify-content: center;
+
+    & a {
+      display: flex;
+      align-items: center;
+      margin: 10px 0 0 0;
+      color: rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      font-size: .9rem;
+    }
+
+    & a::after, & a::before {
+      content: '';
+      position: relative;
+      height: 2px;
+      background: rgba(0, 0, 0, 0.23);;
+      min-width: 100px;
+      margin: 0 10px;
+    }
+  }
+
+
+}// end main
+
+.fade-out{
+    animation-name: section-fade-out;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes section-fade-out {
+  from {
+    display: flex;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+
